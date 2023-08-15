@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilmesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/filmes', [FilmesController::class, 'index'])->name('filmes');
+
+Route::get('/filmes/addfilme', [FilmesController::class, 'addfilme'])->name('filmes.add');
+
+Route::post('/filmes/add', [FilmesController::class, 'addSave'])->name('filmes.addSave');
+
+Route::get('/filmes/{produto}', [FilmesController::class, 'infofilme'])->name('filmes.infofilme');
+
+Route::get('/filmes/edit/{produto}', [FilmesController::class, 'edit'])->name('filmes.edit');
+
+Route::post('/filmes/edit/{produto}', [FilmesController::class, 'editSave'])->name('filmes.editSave');
+
+Route::get('/filmes/delete/{produto}', [FilmesController::class, 'delete'])->name('filmes.delete');
+
+Route::delete('/filmes/delete/{produto}', [FilmesController::class, 'deleteForReal'])->name('filmes.deleteForReal');
