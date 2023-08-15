@@ -23,15 +23,15 @@
 
     @foreach ($prods as $prod)
     <tr>
-        <td><a href="{{ route('produtos.view', $prod->id) }}">{{ $prod->name }}</a></td>
-        <td>R$ {{ number_format($prod->price, 2, ',', '.') }}</td>
-        <td>{{ $prod->quantity }}</td>
-        <td><a href="{{ route('produtos.edit', $prod->id) }}">Editar</a></td>
-        <td><a href="{{ route('produtos.delete', $prod->id) }}">Apagar</a></td>
+        <td><a href="{{ route('filmes.infofilme', $filme->id) }}">{{ $filme->name }}</a></td>
+        <td>R$ {{ number_format($filme->price, 2, ',', '.') }}</td>
+        <td>{{ $filme->quantity }}</td>
+        <td><a href="{{ route('filmes.edit', $prod->id) }}">Editar</a></td>
+        <td><a href="{{ route('filmes.apagarfilme', $filme->id) }}">Apagar</a></td>
     </tr>
     @endforeach
 
 </table>
 
-<a href="{{ route('produtos.add') }}">Adicionar produto</a>
+<a href="{{ route('filmes.addfilme') }}">Adicionar produto</a>
 @endsection

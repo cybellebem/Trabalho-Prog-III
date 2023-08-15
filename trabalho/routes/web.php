@@ -19,16 +19,16 @@ Route::get('/', function () {
 });
 Route::get('/filmes', [FilmesController::class, 'index'])->name('filmes');
 
-Route::get('/filmes/addfilme', [FilmesController::class, 'addfilme'])->name('filmes.add');
+Route::get('/filmes/addfilme', [FilmesController::class, 'addfilme'])->name('filmes.addfilme');
 
 Route::post('/filmes/add', [FilmesController::class, 'addSave'])->name('filmes.addSave');
 
-Route::get('/filmes/{produto}', [FilmesController::class, 'infofilme'])->name('filmes.infofilme');
+Route::get('/filmes/{filme}', [FilmesController::class, 'infofilme'])->name('filmes.infofilme');
 
-Route::get('/filmes/edit/{produto}', [FilmesController::class, 'edit'])->name('filmes.edit');
+Route::get('/filmes/edit/{filme}', [FilmesController::class, 'edit'])->name('filmes.edit');
 
-Route::post('/filmes/edit/{produto}', [FilmesController::class, 'editSave'])->name('filmes.editSave');
+Route::post('/filmes/edit/{filme}', [FilmesController::class, 'editSave'])->name('filmes.editSave');
 
-Route::get('/filmes/delete/{produto}', [FilmesController::class, 'delete'])->name('filmes.delete');
+Route::get('/filmes/delete/{filme}', [FilmesController::class, 'delete'])->name('filmes.delete');
 
-Route::delete('/filmes/delete/{produto}', [FilmesController::class, 'deleteForReal'])->name('filmes.deleteForReal');
+Route::delete('/filmes/delete/{filme}', [FilmesController::class, 'deleteForReal'])->name('filmes.deleteForReal');

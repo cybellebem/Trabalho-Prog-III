@@ -9,10 +9,10 @@ use Illuminate\Validation\Rule;
 class FilmesController extends Controller
 {
     public function index() {
-        $prods = Filme::all();
+        $filmes = Filme::all();
 
         return view('filmes.index', [
-            'prods' => $prods,
+            'filmes' => $filmes,
         ]);
     }
 
@@ -32,43 +32,43 @@ class FilmesController extends Controller
         return redirect()->route('filmes')->with('sucesso', 'Produto inserido com sucesso');
     }
 
-    public function edit(Filme $produto) {
+    public function edit(Filme $filme) {
         // Usamos a mesma view do "add"
         return view('filmes.addfilme', [
-            'prod' => $produto,
+            'filme' => $filme,
         ]);
     }
 
-    public function editSave(Request $form, Filme $produto) {
+    public function editSave(Request $form, Filme $filme) {
         $dados = $form->validate([
             'name' => [
                 'required',
-                Rule::unique('filmes')->ignore($produto->id),
+                Rule::unique('filmes')->ignore($filme->id),
                 'min:3',
             ],
             'price' => 'required|numeric|gte:0',
             'quantity' => 'required|integer|gte:0',
         ]);
 
-        $produto->fill($dados)->save();
+        $filme->fill($dados)->save();
 
         return redirect()->route('filmes')->with('sucesso', 'Produto alterado com sucesso');
     }
 
-    public function view(Filme $produto) {
+    public function view(Filme $filme) {
         return view('filmes.infofilme', [
-            'prod' => $produto,
+            'filme' => $filme,
         ]);
     }
 
-    public function delete(Filme $produto) {
+    public function delete(Filme $filme) {
         return view('filmes.apagarfilme', [
-            'prod' => $produto,
+            'filme' => $filme,
         ]);
     }
 
-    public function deleteForReal(Filme $produto) {
-        $produto->delete();
+    public function deleteForReal(Filme $filme) {
+        $filme->delete();
         return redirect()->route('filmes')->with('sucesso', 'Produto apagado com sucesso!');
     }
 }
