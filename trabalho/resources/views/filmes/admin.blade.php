@@ -18,11 +18,12 @@
     <div class="container">
         <div class="gallery">
             <div class="film-card">
-                <img src="" alt="">
-                <h3>Nome</h3>
-                <p>Ano:</p>
+                <img src="">
+                <h3>Título</h3>
+                <p>Ano: </p>
+                <p>Sinopse: </p>
                 <p>Categoria:</p>
-                <p>Trailer:</p>
+                <p>Trailer: </p>
                 <button class="edit-button">Editar</button>
                 <button class="delete-button">Excluir</button>
             </div>

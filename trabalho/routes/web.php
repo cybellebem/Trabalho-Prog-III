@@ -54,7 +54,6 @@ Route::middleware('admin')->group(function () {
 });
 
 
-//Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
-
+Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
 
 
