@@ -9,11 +9,13 @@ use Illuminate\Validation\Rule;
 class FilmesController extends Controller
 {
     public function lista(){
-        return view('filmes.lista');
+        $filmes = Filme::all();
+        return view('filmes.lista', compact('filmes'));
     }
 
-    public function infofilmes(){
-        return view('filmes.infofilme');
+    public function infofilme($id){
+        $filme = Filme::findOrFail($id);
+        return view('filmes.infofilme', compact('filme'));
     }
 
     public function createFilmes(){

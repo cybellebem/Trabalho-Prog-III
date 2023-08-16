@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/lista', [FilmesController::class, 'lista']);
 
     Route::get('/infofilme', [FilmesController::class, 'infofilme'])->name('infofilme');
-
+    
 
 });
 

@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
+use App\Models\Filme;
+use App\Models\Genero;
+use App\Models\GeneroFilme;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
+        $this->call(FilmeSeeder::class);
+        $this->call(generoFilmeSeeder::class);
+        $this->call(GeneroSeeder::class);
+
         $this->call(UserSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
