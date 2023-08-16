@@ -22,6 +22,8 @@ Route::post('/login', [UsersController::class, 'login'])->name('login');
 
 Route::get('/login', [UsersController::class, 'login']);
 
+Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
+
 Route::get('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
 
 Route::post('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
