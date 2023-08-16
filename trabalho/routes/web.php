@@ -39,4 +39,8 @@ Route::middleware(['admin'])->group(function () {
 
 });
 
+Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
 
+Route::get('/adfilme', [UsersController::class, 'adfilme'])->name('adfilme');
+
+Route::get('/edfilme', [UsersController::class, 'edfilme'])->name('edfilme');
