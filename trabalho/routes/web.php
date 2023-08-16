@@ -18,7 +18,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Route::get('/index', [UsersController::class, 'createUser'])->name('create.user');
+Route::post('/login', [UsersController::class, 'login'])->name('login');
 
-Route::get('/index', [UsersController::class, 'index'])->name('index');
+Route::get('/login', [UsersController::class, 'login']);
 
 Route::get('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
+
+Route::get('/lista', [FilmesController::class, 'lista'])->name('lista');
+
+Route::post('/lista', [FilmesController::class, 'lista']);
+
+
+Route::get('/infofilme', [FilmesController::class, 'infofilme'])->name('infofilme');
+
+
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/addfilme', [FilmesController::class, 'addfilme'])->name('addfilme');
+    Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
+
+});
+
+

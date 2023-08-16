@@ -8,19 +8,20 @@ use Illuminate\Validation\Rule;
 
 class FilmesController extends Controller
 {
-    public function filmes(){
-        return view('teste');
+    public function lista(){
+        return view('filmes.lista');
     }
-    public function filme(){
-        return view('teste');
+
+    public function infofilmes(){
+        return view('filmes.infofilme');
     }
 
     public function createFilmes(){
-
+        return view('filmes.addfilme');
     }
 
     public function deleteFilmes(){
-
+        return view('filmes.apagarfilme');
     }
 
     public function editFilmes(){

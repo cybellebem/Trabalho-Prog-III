@@ -66,7 +66,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="#" method="POST">
+        <form action="{{route('lista')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="email">E-mail:</label>

@@ -27,8 +27,8 @@ class UsersController extends Controller
         }
     }
 
-    public function index(){
-        return view('filmes.index');
+    public function login(){
+        return view('filmes.login');
     }
 
     public function cadastro(){
@@ -43,8 +43,6 @@ class UsersController extends Controller
 
     }
 
-    public function login(){
 
-    }
 
 }

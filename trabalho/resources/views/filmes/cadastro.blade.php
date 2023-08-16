@@ -77,7 +77,7 @@
 <body>
     <div class="signup-container">
         <h2>Cadastro</h2>
-        <form action="#" method="POST">
+        <form action="{{route('login')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
