@@ -16,8 +16,26 @@ class FilmesController extends Controller
         return view('filmes.infofilme');
     }
 
-    public function createFilmes(){
-        return view('filmes.addfilme');
+    public function adfilme(Request $request){
+        if ($request->isMethod('POST')) {
+            $filme = $request->validate([
+                'name' => 'required|string',
+                'sinopse' => 'required|string|max:1000',
+                'ano' => 'required|integer',
+                'imagem' => 'required|string',
+                'link' => 'required|string',
+            ]);
+    
+            dd($filme);
+    
+            $createdFilme = Filme::create($filme);
+    
+            dd($createdFilme);
+    
+            return redirect()->route('admin')->with('success', 'Filme criado com sucesso!');
+        }
+    
+        return view('filmes.adfilme');
     }
 
     public function deleteFilmes(){
