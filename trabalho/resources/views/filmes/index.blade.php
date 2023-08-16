@@ -66,7 +66,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="#" method="POST">
+        <form action="" method="POST">
             @csrf
             <div class="form-group">
                 <label for="email">E-mail:</label>
@@ -78,6 +78,7 @@
             </div>
             <button type="submit" class="btn">Entrar</button>
         </form>
+        <p>Ainda não tem uma conta? <a href="{{ route('cadastro') }}">Cadastre-se aqui</a></p>
     </div>
 </body>
 </html>
