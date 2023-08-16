@@ -21,8 +21,10 @@ class UsersController extends Controller
             ]);
     
             $user['password'] = Hash::make($user['password']);
-    
+            $user['admin'] = $request->has('admin'); // true se o checkbox estiver marcado, false caso contrário
+
             $createdUser = User::create($user);
+           
     
             // Lança um evento Registered que pode enviar um e-mail para o usuário
             event(new Registered($createdUser));
@@ -42,7 +44,7 @@ class UsersController extends Controller
             ]);
             if (Auth::attempt($data)){
 
-                return redirect()->route('admin');
+                return redirect()->route('lista');
             } else {
                 return redirect()->route('login')->with('erro', 'Deu ruim');
             }
@@ -62,13 +64,7 @@ class UsersController extends Controller
         return view('filmes.admin');
     }
 
-    public function adfilme(){
-        return view('filmes.adfilme');
-    }
-
-    public function edfilme(){
-        return view('filmes.edfilme');
-    }
+   
 
 
     public function deleteUser(){

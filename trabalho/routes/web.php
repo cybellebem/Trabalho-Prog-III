@@ -24,7 +24,7 @@ Route::get('/login', [UsersController::class, 'login']);
 
 Route::get('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
 
-Route::post('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
+Route::post('/cadastro', [UsersController::class, 'cadastro']);
 
 
 
@@ -44,14 +44,15 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('admin')->group(function () {
-    Route::get('/addfilme', [FilmesController::class, 'addfilme'])->name('addfilme');
+    Route::get('/adfilme', [UsersController::class, 'adfilme'])->name('adfilme');
+
+    Route::get('/edfilme', [UsersController::class, 'edfilme'])->name('edfilme');
+    
     Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
 });
 
 
-Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
+//Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
 
 
-Route::get('/adfilme', [UsersController::class, 'adfilme'])->name('adfilme');
 
-Route::get('/edfilme', [UsersController::class, 'edfilme'])->name('edfilme');

@@ -93,7 +93,7 @@
             </div>
             <div class="form-group checkbox">
                 <label for="administrador">administrador:</label>
-                <input type="checkbox" id="administrador" name="admin">
+                <input type="checkbox" id="admin" name="admin">
             </div>
             <button type="submit" class="btn">Cadastrar</button>
         </form>

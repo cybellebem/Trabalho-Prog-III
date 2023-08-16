@@ -15,10 +15,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->check() && auth()->user()->admin) {
+        if (auth()->check() && auth()->user()->can('create-admin')) {
             return $next($request);
         }
-
+    
         return redirect('/login');
         }
 }
