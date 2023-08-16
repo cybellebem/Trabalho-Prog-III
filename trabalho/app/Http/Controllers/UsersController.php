@@ -22,9 +22,17 @@ class UsersController extends Controller
             $user = User::create($usr);
             // Lança um evento Registered que vai enviar um e-mail para o usuário
             event(new Registered($user));
-        
+
             return redirect()->route('login');
         }
+    }
+
+    public function index(){
+        return view('filmes.index');
+    }
+
+    public function cadastro(){
+        return view('filmes.cadastro');
     }
 
     public function deleteUser(){

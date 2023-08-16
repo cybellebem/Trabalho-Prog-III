@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@
             background-color: #f8f9fa;
         }
 
-        .login-container {
+        .signup-container {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        .login-container h2 {
+        .signup-container h2 {
             margin-bottom: 20px;
             color: #333;
         }
@@ -48,6 +48,17 @@
             border-radius: 5px;
         }
 
+        .form-group .checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group .checkbox label {
+            margin-left: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
         .btn {
             background-color: #007bff;
             color: #fff;
@@ -64,10 +75,14 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="signup-container">
+        <h2>Cadastro</h2>
         <form action="#" method="POST">
             @csrf
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
@@ -76,7 +91,11 @@
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
             </div>
-            <button type="submit" class="btn">Entrar</button>
+            <div class="form-group checkbox">
+                <label for="administrador">administrador:</label>
+                <input type="checkbox" id="administrador" name="administrador">
+            </div>
+            <button type="submit" class="btn">Cadastrar</button>
         </form>
     </div>
 </body>
