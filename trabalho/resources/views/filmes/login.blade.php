@@ -15,6 +15,15 @@
             background-color: #f8f9fa;
         }
 
+        body a {
+            color: blue;
+        text-decoration: none;
+        }
+
+        .body a:active {
+        color: #0056b3;
+        }
+
         .login-container {
             background-color: #ffffff;
             border-radius: 10px;
@@ -66,7 +75,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="{{route('lista')}}" method="POST">
+        <form action="{{route('login')}}" method="POST">
 
             @csrf
             <div class="form-group">

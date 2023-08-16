@@ -5,32 +5,32 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class UsersController extends Controller
 {
 
-    public function cadastro(){
-        return view('filmes.cadastro');
-    }
-    public function cadastro1(Request $request){
+    public function cadastro(Request $request){
         if ($request->isMethod('POST')) {
-            $usr = $request->validate([
-                'name' => ['string|required'],
-                'email' => ['email|required', Rule::unique('users')],
-                'password' => ['string|required'],
+            $user = $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|string',
             ]);
-
-            $usr['password'] = Hash::make($usr['password']);
-
-            $user = User::create($usr);
-            // Lança um evento Registered que vai enviar um e-mail para o usuário
-            event(new Registered($user));
-
-            return redirect()->route('cadastro');
+    
+            $user['password'] = Hash::make($user['password']);
+    
+            $createdUser = User::create($user);
+    
+            // Lança um evento Registered que pode enviar um e-mail para o usuário
+            event(new Registered($createdUser));
+    
+            return redirect()->route('login')->with('success', 'Cadastro realizado com sucesso!');
         }
+    
+        return view('filmes.cadastro');
     }
 
 
@@ -42,7 +42,7 @@ class UsersController extends Controller
             ]);
             if (Auth::attempt($data)){
 
-                return redirect()->route('lista');
+                return redirect()->route('admin');
             } else {
                 return redirect()->route('login')->with('erro', 'Deu ruim');
             }
@@ -51,6 +51,7 @@ class UsersController extends Controller
         //dd($usuarios);
         return view('filmes.login');
     }
+
     public function logout(){
         Auth::logout();
         return redirect()->route('filmes.lista');

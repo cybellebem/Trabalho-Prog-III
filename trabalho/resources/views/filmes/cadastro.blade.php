@@ -77,11 +77,11 @@
 <body>
     <div class="signup-container">
         <h2>Cadastro</h2>
-        <form action="{{route('login')}}" method="POST">
+        <form action="{{ route('cadastro') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="name" required>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="password" required>
+                <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group checkbox">
                 <label for="administrador">administrador:</label>

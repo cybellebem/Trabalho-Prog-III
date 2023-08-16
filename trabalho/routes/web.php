@@ -24,6 +24,9 @@ Route::get('/login', [UsersController::class, 'login']);
 
 Route::get('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
 
+Route::post('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
+
+
 
 
 
