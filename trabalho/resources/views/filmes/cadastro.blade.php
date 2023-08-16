@@ -81,7 +81,7 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
@@ -89,11 +89,11 @@
             </div>
             <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" id="senha" name="password" required>
             </div>
             <div class="form-group checkbox">
                 <label for="administrador">administrador:</label>
-                <input type="checkbox" id="administrador" name="administrador">
+                <input type="checkbox" id="administrador" name="admin">
             </div>
             <button type="submit" class="btn">Cadastrar</button>
         </form>

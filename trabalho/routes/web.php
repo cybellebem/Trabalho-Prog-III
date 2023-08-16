@@ -24,19 +24,24 @@ Route::get('/login', [UsersController::class, 'login']);
 
 Route::get('/cadastro', [UsersController::class, 'cadastro'])->name('cadastro');
 
-Route::get('/lista', [FilmesController::class, 'lista'])->name('lista');
-
-Route::post('/lista', [FilmesController::class, 'lista']);
-
-
-Route::get('/infofilme', [FilmesController::class, 'infofilme'])->name('infofilme');
 
 
 
-Route::middleware(['admin'])->group(function () {
+
+Route::middleware('auth')->group(function () {
+
+
+    Route::get('/lista', [FilmesController::class, 'lista'])->name('lista');
+    Route::post('/lista', [FilmesController::class, 'lista']);
+
+    Route::get('/infofilme', [FilmesController::class, 'infofilme'])->name('infofilme');
+
+
+});
+
+Route::middleware('admin')->group(function () {
     Route::get('/addfilme', [FilmesController::class, 'addfilme'])->name('addfilme');
     Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
-
 });
 
 
