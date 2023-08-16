@@ -15,11 +15,11 @@
         </nav>
     </div>
     <div class="container">
-        <form action="" method="POST">
+    <form action="{{ route('adfilme') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="sinopse">Sinopse:</label>
@@ -28,16 +28,6 @@
             <div class="form-group">
                 <label for="ano">Ano:</label>
                 <input type="number" id="ano" name="ano" required>
-            </div>
-            <div class="form-group">
-                <label for="categoria">Categoria:</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="Ação">Ação</option>
-                    <option value="Aventura">Aventura</option>
-                    <option value="Comédia">Comédia</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Romance">Romance</option>
-                </select>
             </div>
             <div class="form-group">
                 <label for="imagem_capa">Imagem da Capa:</label>

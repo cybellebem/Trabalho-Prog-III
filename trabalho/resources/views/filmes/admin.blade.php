@@ -22,6 +22,7 @@
                 <h3>Nome</h3>
                 <p>Ano:</p>
                 <p>Categoria:</p>
+                <p>Trailer:</p>
                 <button class="edit-button">Editar</button>
                 <button class="delete-button">Excluir</button>
             </div>

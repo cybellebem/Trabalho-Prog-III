@@ -10,23 +10,23 @@
 <body>
 
 <div class="signup-container">
-    <h2>Cadastro</h2>
+    <h2>CADASTRO</h2>
     <form action="{{ route('cadastro') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome</label>
             <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
-            <label for="email">E-mail:</label>
+            <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
-            <label for="senha">Senha:</label>
+            <label for="senha">Senha</label>
             <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group checkbox">
-            <label for="administrador">Administrador:</label>
+            <label for="administrador">Administrador</label>
             <input type="checkbox" id="admin" name="admin">
         </div>
         <button type="submit" class="btn">Cadastrar</button>

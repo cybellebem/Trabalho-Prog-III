@@ -1,14 +1,14 @@
 /*ed ad filme*/
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #00bfff;
     margin: 0;
     padding: 0;
 }
 
 .header {
 background-color: #333;
-color: #fff;
+color: #00bfff;
 padding: 10px;
 text-align: center;
 }
