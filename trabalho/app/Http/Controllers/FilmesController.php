@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Filme;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\Genero;
 
 class FilmesController extends Controller
 {
@@ -51,6 +52,24 @@ public function adicionarFilme(Request $request)
     public function adfilme(){
         return view('filmes.adfilme');
     }
+
+    public function adcategoria(){
+        return view('filmes.adcategoria');
+    }
+
+    public function adicionarCategoria(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:genero,name',
+        ]);
+    
+        Genero::create([
+            'name' => $request->name,
+        ]);
+    
+        return redirect()->route('adcategoria')->with('success', 'Categoria adicionada com sucesso!');
+    }
+    
 
     public function edfilme($id)
     {

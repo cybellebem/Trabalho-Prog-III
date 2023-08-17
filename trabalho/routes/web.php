@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/exibir-adfilme', [FilmesController::class, 'exibirAdicionarFilme'])->name('exibir.adfilme');
     Route::post('/adicionar-filme', [FilmesController::class, 'adicionarFilme'])->name('adicionar.filme');
     Route::get('/adfilme', [FilmesController::class, 'adfilme'])->name('adfilme');
+    Route::get('/adcategoria', [FilmesController::class, 'adcategoria'])->name('adcategoria');
+    Route::post('/adicionar-categoria', [FilmesController::class, 'adicionarCategoria'])->name('adicionar.categoria');
     Route::get('/edfilme/{id}', [FilmesController::class, 'edfilme'])->name('edfilme');
     Route::post('/edfilme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
     Route::post('/atualizar-filme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
