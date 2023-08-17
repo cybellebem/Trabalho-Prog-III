@@ -20,6 +20,7 @@
     <div class="gallery">
         @foreach ($filmes as $filme)
         <div class="film-card">
+
             <img src="{{ asset('storage/' . $filme->imagem) }}">
             <h3>{{ $filme->name }}</h3>
             <h4>{{ $filme->ano }}</h4>

@@ -15,7 +15,7 @@
         </nav>
     </div>
     <div class="container">
-    <form action="{{ route('adicionar.filme') }}" method="POST">
+    <form action="{{ route('adicionar.filme') }}" method="POST" enctype="multipart/form-data">
 
             @csrf
             <div class="form-group">

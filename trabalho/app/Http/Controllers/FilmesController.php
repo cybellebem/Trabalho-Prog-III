@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Filme;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Genero;
@@ -17,16 +18,21 @@ class FilmesController extends Controller
 
 public function adicionarFilme(Request $request)
 {
+
+
+
+
     $filme = $request->validate([
         'name' => 'required|string',
         'sinopse' => 'required|string|max:1000',
         'ano' => 'required|integer',
-        'imagem' => 'required|string',
         'link' => 'required|string',
     ]);
+        $imagePath = $request->file('imagem')->store('','public');
+        $filme['imagem'] = $imagePath;
 
-    $createdFilme = Filme::create($filme);
 
+    Filme::create($filme);
     return redirect()->route('admin')->with('success', 'Filme criado com sucesso!');
 }
     public function admin()
@@ -70,14 +76,14 @@ public function adicionarFilme(Request $request)
         $request->validate([
             'name' => 'required|unique:genero,name',
         ]);
-    
+
         Genero::create([
             'name' => $request->name,
         ]);
-    
+
         return redirect()->route('adcategoria')->with('success', 'Categoria adicionada com sucesso!');
     }
-    
+
 
     public function edfilme($id)
     {
