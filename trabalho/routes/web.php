@@ -35,27 +35,25 @@ Route::post('/cadastro', [UsersController::class, 'cadastro']);
 
 Route::middleware('auth')->group(function () {
 
-
 Route::get('/lista', [FilmesController::class, 'lista'])->name('lista');
 Route::post('/lista', [FilmesController::class, 'lista']);
-
 Route::get('/infofilme/{id}', [FilmesController::class, 'infofilme'])->name('infofilme');
 
 
 });
 
 
-Route::middleware('auth','admin')->group(function () {
-
-    Route::get('/edfilme', [FilmesController::class, 'edfilme'])->name('edfilme');
-    
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
+    Route::get('/exibir-adfilme', [FilmesController::class, 'exibirAdicionarFilme'])->name('exibir.adfilme');
+    Route::post('/adicionar-filme', [FilmesController::class, 'adicionarFilme'])->name('adicionar.filme');
+    Route::get('/adfilme', [FilmesController::class, 'adfilme'])->name('adfilme');
+    Route::get('/edfilme', [FilmesController::class, 'edfilme'])->name('edfilme');   
     Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
 });
 
-Route::get('/adfilme', [FilmesController::class, 'adfilme'])->name('adfilme');
-Route::post('/adfilme', [FilmesController::class, 'adfilme']);
 
-Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
 
-Route::post('/admin', [UsersController::class, 'admin']);
+
+
 
