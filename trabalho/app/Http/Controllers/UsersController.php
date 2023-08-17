@@ -43,14 +43,20 @@ class UsersController extends Controller
                 'password' => 'required'
             ]);
             if (Auth::attempt($data)){
-
-                return redirect()->route('lista');
+                $user = Auth::user();
+    
+                if ($user->admin) {
+                    // Usuário é administrador, redirecionar para a página de administração
+                    return redirect()->route('admin');
+                } else {
+                    // Usuário não é administrador, redirecionar para outra página
+                    return redirect()->route('lista');
+                }
             } else {
                 return redirect()->route('login')->with('erro', 'Deu ruim');
             }
         }
-        //$usuarios = User::all();
-        //dd($usuarios);
+        
         return view('filmes.login');
     }
 
