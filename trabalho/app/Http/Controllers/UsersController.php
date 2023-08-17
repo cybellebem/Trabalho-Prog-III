@@ -74,6 +74,10 @@ class UsersController extends Controller
         return view('filmes.edfilme');
     }
 
+    public function infofilme(){
+        return view('filmes.infofilme');
+    }
+
 
     public function deleteUser(){
 
