@@ -28,7 +28,7 @@
             <!--<p>Categoria: {{ $filme->categoria }}</p>-->
             <a href="{{$filme->link}}" target="_blank">Assistir ao Trailer</a>
             <br>
-            <a href="{{ route('edfilme', ['id' => $filme->id]) }}" class="edit-button">Editar</a>
+            <button onclick="window.location='{{ route('edfilme', ['id' => $filme->id]) }}'" class="edit-button">Editar</button>
             <form action="{{ route('apagarfilme', ['id' => $filme->id]) }}" method="POST" class="delete-form">
                 @csrf
                 @method('DELETE')
