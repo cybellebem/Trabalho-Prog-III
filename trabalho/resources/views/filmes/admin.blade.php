@@ -16,18 +16,21 @@
         </nav>
     </div>
     <div class="container">
-        <div class="gallery">
-            <div class="film-card">
-                <img src="">
-                <h3>Título</h3>
-                <p>Ano: </p>
-                <p>Sinopse: </p>
-                <p>Categoria:</p>
-                <p>Trailer: </p>
-                <button class="edit-button">Editar</button>
-                <button class="delete-button">Excluir</button>
-            </div>
+    <div class="gallery">
+        @foreach ($filmes as $filme)
+        <div class="film-card">
+            <img src="{{ asset('storage/' . $filme->imagem) }}">
+            <h3>{{ $filme->name }}</h3>
+            <h4>{{ $filme->ano }}</h4>
+            <p>{{ $filme->sinopse }}</p>
+            <!--<p>Categoria: {{ $filme->categoria }}</p>-->
+            <a href="{{$filme->link}}" target="_blank">Assistir ao Trailer</a>
+            <br>
+            <a href="{{ route('edfilme', ['id' => $filme->id]) }}" class="edit-button">Editar</a>
+            <button class="delete-button">Excluir</button>
         </div>
+        @endforeach
     </div>
+</div>
 </body>
 </html>

@@ -19,33 +19,23 @@
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text"name="name" required>
             </div>
             <div class="form-group">
                 <label for="sinopse">Sinopse:</label>
-                <textarea id="sinopse" name="sinopse" rows="4" required></textarea>
+                <textarea name="sinopse" rows="4" required></textarea>
             </div>
             <div class="form-group">
                 <label for="ano">Ano:</label>
-                <input type="number" id="ano" name="ano" required>
-            </div>
-            <div class="form-group">
-                <label for="categoria">Categoria:</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="Ação">Ação</option>
-                    <option value="Aventura">Aventura</option>
-                    <option value="Comédia">Comédia</option>
-                    <option value="Drama">Drama</option>
-                    <option value="romance">Romance</option>
-                </select>
+                <input type="number" name="ano" required>
             </div>
             <div class="form-group">
                 <label for="imagem_capa">Imagem da Capa:</label>
-                <input type="file" id="imagem_capa" name="imagem_capa" required>
+                <input type="file" name="imagem" required>
             </div>
             <div class="form-group">
                 <label for="link_trailer">Link do Trailer:</label>
-                <input type="text" id="link_trailer" name="link_trailer" required>
+                <input type="text" name="link" required>
             </div>
             <button type="submit" class="btn">Editar</button>
         </form>
