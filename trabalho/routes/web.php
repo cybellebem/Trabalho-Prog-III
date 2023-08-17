@@ -52,7 +52,7 @@ Route::middleware('admin')->group(function () {
     Route::post('/adicionar-categoria', [FilmesController::class, 'adicionarCategoria'])->name('adicionar.categoria');
     Route::get('/edfilme/{id}', [FilmesController::class, 'edfilme'])->name('edfilme');
     Route::post('/edfilme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
-    Route::post('/atualizar-filme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
+    Route::patch('/atualizar-filme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
 
     Route::delete('/apagarfilme/{id}', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
 });

@@ -23,7 +23,7 @@ class FilmeSeeder extends Seeder
             'name' => 'Homem Aranha: Através do Aranhaverso',
             'sinopse' => 'Morales é transportado para uma aventura épica através do multiverso, e deve unir forças com a mulher-aranha Gwen Stacy e um novo time de Pessoas-Aranha, formado por heróis de diversas dimensões.',
             'ano' => '2023',
-            'imagem' => 'HMR.jpg',
+            'imagem' => 'filme.webp',
             'link' => 'https://youtu.be/LZBlXkDvhh4',
         ]);
     }

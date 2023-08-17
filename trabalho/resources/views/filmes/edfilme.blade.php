@@ -15,7 +15,8 @@
         </nav>
     </div>
     <div class="container">
-        <form action="{{ route('atualizar.filme', ['id' => $filme->id]) }}" method="POST">
+        <form action="{{ route('atualizar.filme', ['id' => $filme->id]) }}" method="POST" enctype="multipart/form-data">
+            @method('PATCH')
             @csrf
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -31,7 +32,8 @@
             </div>
             <div class="form-group">
                 <label for="imagem_capa">Imagem da Capa:</label>
-                <input type="file" name="imagem" required>
+                <input type="file" name="imagem" value="{{$filme->imagem }}" accept="image/*" required>
+
             </div>
             <div class="form-group">
                 <label for="link_trailer">Link do Trailer:</label>

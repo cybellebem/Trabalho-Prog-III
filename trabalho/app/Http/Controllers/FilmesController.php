@@ -23,6 +23,8 @@ class FilmesController extends Controller
         'name' => 'required|string',
         'sinopse' => 'required|string|max:1000',
         'ano' => 'required|integer',
+
+
         'link' => 'required|string',
     ]);
         $imagePath = $request->file('imagem')->store('','public');
@@ -42,14 +44,14 @@ class FilmesController extends Controller
     public function lista(Request $request)
     {
         $query = Filme::query();
-    
+
         if ($request->has('ano')) {
             $ano = $request->input('ano');
             $query->where('ano', $ano);
         }
-    
+
         $filmes = $query->get();
-    
+
         return view('filmes.lista', compact('filmes'));
     }
 
@@ -115,6 +117,10 @@ class FilmesController extends Controller
             'imagem' => 'required|string',
             'link' => 'required|string',
         ]);
+        if ($request->hasFile('imagem')) {
+            $novaImagemPath = $request->file('imagem')->store('', 'public');
+            $dadosFilme['imagem'] = $novaImagemPath;
+        }
 
         $filme->update($dadosFilme);
 
