@@ -13,6 +13,7 @@
         <nav>
             <a href="{{ route('adfilme') }}">Adicionar filme</a>
             <a href="{{ route('logout') }}">Sair</a>
+            <a href="{{ route('adcategoria') }}">Adicionar categoria</a>
         </nav>
     </div>
     <div class="container">
