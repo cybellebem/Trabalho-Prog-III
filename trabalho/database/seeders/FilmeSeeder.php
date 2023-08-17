@@ -16,7 +16,7 @@ class FilmeSeeder extends Seeder
             'name' => 'Guardiões da Galáxia Vol. 3',
             'sinopse' => 'O amado grupo de desajustados busca se estabelecer em Lugar Nenhum, mas não demora muito para que suas vidas sejam reviradas pelos ecos do passado turbulento de Rocket',
             'ano' => '2023',
-            'imagem' => 'gdg3.jpg',
+            'imagem' => 'gdg3.jpeg',
             'link' => 'https://youtu.be/JqcncLPi9zw',
         ]);
         Filme::create([
