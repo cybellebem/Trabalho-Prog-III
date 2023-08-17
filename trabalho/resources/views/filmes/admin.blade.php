@@ -25,7 +25,7 @@
             <h3>{{ $filme->name }}</h3>
             <h4>{{ $filme->ano }}</h4>
             <p>{{ $filme->sinopse }}</p>
-            <!--<p>Categoria: {{ $filme->categoria }}</p>-->
+            <h4>{{ $filme->categoria }}</h4>
             <a href="{{$filme->link}}" target="_blank">Assistir ao Trailer</a>
             <br>
             <button onclick="window.location='{{ route('edfilme', ['id' => $filme->id]) }}'" class="edit-button">Editar</button>

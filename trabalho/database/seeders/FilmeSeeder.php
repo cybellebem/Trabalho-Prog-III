@@ -17,6 +17,7 @@ class FilmeSeeder extends Seeder
             'sinopse' => 'O amado grupo de desajustados busca se estabelecer em Lugar Nenhum, mas não demora muito para que suas vidas sejam reviradas pelos ecos do passado turbulento de Rocket',
             'ano' => '2023',
             'imagem' => 'gdg3.jpeg',
+            'categoria' => 'Comédia',
             'link' => 'https://youtu.be/JqcncLPi9zw',
         ]);
         Filme::create([
@@ -24,6 +25,7 @@ class FilmeSeeder extends Seeder
             'sinopse' => 'Morales é transportado para uma aventura épica através do multiverso, e deve unir forças com a mulher-aranha Gwen Stacy e um novo time de Pessoas-Aranha, formado por heróis de diversas dimensões.',
             'ano' => '2023',
             'imagem' => 'filme.webp',
+            'categoria' => 'Ação',
             'link' => 'https://youtu.be/LZBlXkDvhh4',
         ]);
     }

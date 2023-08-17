@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('sinopse', 1000);
             $table->year('ano');
+            $table->string('categoria');
             $table->string('imagem', 1000);
             $table->string('link');
             $table->timestamps();

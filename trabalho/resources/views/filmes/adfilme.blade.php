@@ -35,6 +35,10 @@
                 <input type="file" name="imagem" required>
             </div>
             <div class="form-group">
+                <label for="name">Categoria:</label>
+                <input type="text" name="categoria" required>
+            </div>
+            <div class="form-group">
                 <label for="link_trailer">Link do Trailer:</label>
                 <input type="text" name="link" required>
             </div>

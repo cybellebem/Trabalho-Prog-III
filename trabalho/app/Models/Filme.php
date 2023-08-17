@@ -13,6 +13,7 @@ class Filme extends Model
         'name',
         'sinopse',
         'ano',
+        'categoria',
         'imagem',
         'link',
     ];

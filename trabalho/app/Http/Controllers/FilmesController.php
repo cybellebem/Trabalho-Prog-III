@@ -23,8 +23,7 @@ class FilmesController extends Controller
         'name' => 'required|string',
         'sinopse' => 'required|string|max:1000',
         'ano' => 'required|integer',
-
-
+        'categoria' => 'required|string',
         'link' => 'required|string',
     ]);
         $imagePath = $request->file('imagem')->store('','public');
