@@ -16,14 +16,14 @@ class FilmeSeeder extends Seeder
             'name' => 'Guardiões da Galáxia Vol. 3',
             'sinopse' => 'O amado grupo de desajustados busca se estabelecer em Lugar Nenhum, mas não demora muito para que suas vidas sejam reviradas pelos ecos do passado turbulento de Rocket',
             'ano' => '2023',
-            'imagem' => 'https://assets.mycast.io/posters/guardians-of-the-galaxy-vol-3-fan-casting-poster-118946-large.jpg?1627650413',
+            'imagem' => 'OIP.jpg',
             'link' => 'https://youtu.be/JqcncLPi9zw',
         ]);
         Filme::create([
             'name' => 'Homem Aranha: Através do Aranhaverso',
             'sinopse' => 'Morales é transportado para uma aventura épica através do multiverso, e deve unir forças com a mulher-aranha Gwen Stacy e um novo time de Pessoas-Aranha, formado por heróis de diversas dimensões.',
             'ano' => '2023',
-            'imagem' => 'nad aainda',
+            'imagem' => 'HMR.jpg',
             'link' => 'https://youtu.be/LZBlXkDvhh4',
         ]);
     }

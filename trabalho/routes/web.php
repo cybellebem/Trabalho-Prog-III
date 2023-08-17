@@ -33,16 +33,16 @@ Route::post('/cadastro', [UsersController::class, 'cadastro']);
 
 
 
-//Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
 
 Route::get('/lista', [FilmesController::class, 'lista'])->name('lista');
 Route::post('/lista', [FilmesController::class, 'lista']);
 
-Route::get('/infofilme', [FilmesController::class, 'infofilme'])->name('infofilme');
+Route::get('/infofilme/{id}', [FilmesController::class, 'infofilme'])->name('infofilme');
 
 
-//});
+});
 
 
 Route::middleware('admin')->group(function () {
