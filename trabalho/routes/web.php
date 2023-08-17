@@ -43,7 +43,7 @@ Route::get('/infofilme/{id}', [FilmesController::class, 'infofilme'])->name('inf
 });
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('admin')->group(function () {
     Route::get('/admin', [FilmesController::class, 'admin'])->name('admin');
     Route::get('/exibir-adfilme', [FilmesController::class, 'exibirAdicionarFilme'])->name('exibir.adfilme');
     Route::post('/adicionar-filme', [FilmesController::class, 'adicionarFilme'])->name('adicionar.filme');
@@ -51,8 +51,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/edfilme/{id}', [FilmesController::class, 'edfilme'])->name('edfilme');
     Route::post('/edfilme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
     Route::post('/atualizar-filme/{id}', [FilmesController::class, 'atualizarFilme'])->name('atualizar.filme');
-    
-    Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
+
+    Route::delete('/apagarfilme/{id}', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
 });
 
 

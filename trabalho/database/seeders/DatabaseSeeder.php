@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(FilmeSeeder::class);
-        $this->call(generoFilmeSeeder::class);
+        //$this->call(generoFilmeSeeder::class);
         $this->call(GeneroSeeder::class);
 
         $this->call(UserSeeder::class);
