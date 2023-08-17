@@ -114,7 +114,6 @@ class FilmesController extends Controller
             'name' => 'required|string',
             'sinopse' => 'required|string|max:1000',
             'ano' => 'required|integer',
-            'imagem' => 'required|string',
             'link' => 'required|string',
         ]);
         if ($request->hasFile('imagem')) {
