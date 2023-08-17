@@ -15,7 +15,7 @@
         </nav>
     </div>
     <div class="container">
-    <form action="{{ route('adfilme') }}" method="POST">
+    <form action="{{ route('admin') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Nome:</label>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="imagem_capa">Imagem da Capa:</label>
-                <input type="file" id="imagem_capa" name="imagem_capa" required>
+                <input type="file" id="imagem" name="imagem" required>
             </div>
             <div class="form-group">
                 <label for="link_trailer">Link do Trailer:</label>

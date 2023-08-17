@@ -24,10 +24,14 @@ class FilmesController extends Controller
                 'name' => 'required|string',
                 'sinopse' => 'required|string|max:1000',
                 'ano' => 'required|integer',
-                'imagem' => 'required|string',
+                'imagem' => 'required|image',
                 'link' => 'required|string',
             ]);
-    
+            if ($request->hasFile('imagem')) {
+                $imagemPath = $request->file('imagem')->store('storage/app/public', 'public');
+                $filme['imagem'] = $imagemPath;
+            }
+            
             dd($filme);
     
             $createdFilme = Filme::create($filme);

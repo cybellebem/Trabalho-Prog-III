@@ -45,15 +45,17 @@ Route::get('/infofilme/{id}', [FilmesController::class, 'infofilme'])->name('inf
 });
 
 
-Route::middleware('admin')->group(function () {
-    Route::get('/adfilme', [UsersController::class, 'adfilme'])->name('adfilme');
+Route::middleware('auth','admin')->group(function () {
 
-    Route::get('/edfilme', [UsersController::class, 'edfilme'])->name('edfilme');
+    Route::get('/edfilme', [FilmesController::class, 'edfilme'])->name('edfilme');
     
     Route::get('/apagarfilme', [FilmesController::class, 'apagarfilme'])->name('apagarfilme');
 });
 
+Route::get('/adfilme', [FilmesController::class, 'adfilme'])->name('adfilme');
+Route::post('/adfilme', [FilmesController::class, 'adfilme']);
 
 Route::get('/admin', [UsersController::class, 'admin'])->name('admin');
 
+Route::post('/admin', [UsersController::class, 'admin']);
 
