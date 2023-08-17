@@ -12,15 +12,12 @@ class FilmesController extends Controller
 {
 
     public function exibirAdicionarFilme()
-{
-    return view('filmes.adfilme');
-}
+    {
+        return view('filmes.adfilme');
+    }
 
-public function adicionarFilme(Request $request)
-{
-
-
-
+    public function adicionarFilme(Request $request)
+    {
 
     $filme = $request->validate([
         'name' => 'required|string',
@@ -34,15 +31,25 @@ public function adicionarFilme(Request $request)
 
     Filme::create($filme);
     return redirect()->route('admin')->with('success', 'Filme criado com sucesso!');
-}
+    }
+
     public function admin()
     {
         $filmes = Filme::all();
         return view('filmes.admin', compact('filmes'));
     }
 
-    public function lista(){
-        $filmes = Filme::all();
+    public function lista(Request $request)
+    {
+        $query = Filme::query();
+    
+        if ($request->has('ano')) {
+            $ano = $request->input('ano');
+            $query->where('ano', $ano);
+        }
+    
+        $filmes = $query->get();
+    
         return view('filmes.lista', compact('filmes'));
     }
 

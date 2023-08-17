@@ -15,20 +15,16 @@
         </nav>
     </div>
     <div class="container">
-        <div class="filter">
+    <div class="filter">
+        <form action="{{ route('lista') }}" method="GET">
             <h3><label for="ano">Ano</label></h3>
             <input type="number" name="ano" placeholder="Digite o ano...">
-            
-            <h3><label for="categoria">Categoria</label></h3>
-            <select id="categoria" name="categoria">
-                <option value="">Todos</option>
-            </select>
-
             <div class="filter-button">
-                <button id="filtrar">Filtrar</button>
+                <button type="submit" id="filtrar">Filtrar</button>
             </div>
-        </div>
-
+        </form>
+    </div>
+</div>
     <div class="container">
         <div class="gallery">
             @foreach ($filmes as $filme)
