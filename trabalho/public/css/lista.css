@@ -1,0 +1,77 @@
+/* film-details.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #00bfff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: #00bfff;
+    padding: 10px;
+    text-align: center;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header a:hover {
+    color: #00bfff;
+}
+
+.header a:active {
+    color: #0056b3;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.film-details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+}
+
+.film-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.film-details h2 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.film-details p {
+    margin: 10px 0;
+}
+
+.film-details .sinopse {
+    text-align: justify;
+}
+
+.film-details a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:  #00bfff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.film-details a:hover {
+    background-color: #0056b3;
+}
