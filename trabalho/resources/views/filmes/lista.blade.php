@@ -20,7 +20,7 @@
             <div class="film-card">
                 <img src="{{ asset('storage/' . $filme->imagem) }}">
                 <h3>{{ $filme->name }}</h3>
-                <p><a href="{{ route('infofilme') }}">Saiba mais</a></p>
+                <p><a href="{{ route('infofilme', ['id' => $filme->id]) }}">Saiba mais</a></p>
             </div>
             @endforeach
         </div>
