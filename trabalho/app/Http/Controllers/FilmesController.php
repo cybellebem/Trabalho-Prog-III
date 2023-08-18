@@ -39,20 +39,28 @@ class FilmesController extends Controller
         $filmes = Filme::all();
         return view('filmes.admin', compact('filmes'));
     }
-
+    
     public function lista(Request $request)
-    {
-        $query = Filme::query();
+{
+    $query = Filme::query();
 
-        if ($request->has('ano')) {
-            $ano = $request->input('ano');
-            $query->where('ano', $ano);
-        }
-
-        $filmes = $query->get();
-
-        return view('filmes.lista', compact('filmes'));
+    if ($request->filled('ano')) {
+        $ano = $request->input('ano');
+        $query->where('ano', $ano);
     }
+
+    if ($request->filled('categoria')) {
+        $categoria = $request->input('categoria');
+        $query->where('categoria', $categoria);
+    }
+
+    $filmes = $query->get();
+
+    return view('filmes.lista', compact('filmes'));
+}
+
+    
+    
 
     public function infofilme($id){
         $filme = Filme::findOrFail($id);
@@ -113,6 +121,7 @@ class FilmesController extends Controller
             'name' => 'required|string',
             'sinopse' => 'required|string|max:1000',
             'ano' => 'required|integer',
+            'categoria' => 'required|string',
             'link' => 'required|string',
         ]);
         if ($request->hasFile('imagem')) {

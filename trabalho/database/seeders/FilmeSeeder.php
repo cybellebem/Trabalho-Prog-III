@@ -25,7 +25,7 @@ class FilmeSeeder extends Seeder
             'sinopse' => 'Morales é transportado para uma aventura épica através do multiverso, e deve unir forças com a mulher-aranha Gwen Stacy e um novo time de Pessoas-Aranha, formado por heróis de diversas dimensões.',
             'ano' => '2023',
             'imagem' => 'filme.webp',
-            'categoria' => 'Ação',
+            'categoria' => 'Aventura',
             'link' => 'https://youtu.be/LZBlXkDvhh4',
         ]);
     }

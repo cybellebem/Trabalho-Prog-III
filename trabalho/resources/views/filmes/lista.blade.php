@@ -16,14 +16,19 @@
     </div>
     <div class="container">
     <div class="filter">
-        <form action="{{ route('lista') }}" method="GET">
-            <h3><label for="ano">Ano</label></h3>
-            <input type="number" name="ano" placeholder="Digite o ano...">
-            <div class="filter-button">
-                <button type="submit" id="filtrar">Filtrar</button>
-            </div>
-        </form>
-    </div>
+    <form action="{{ route('lista') }}" method="GET">
+        <h3><label for="ano">Filtrar</label></h3>
+        <input type="number" name="ano" placeholder="ano...">
+        <br>
+        <input type="text" name="categoria" placeholder="Digite a categoria...">
+        <div class="filter-button">
+            <br>
+            <button type="submit" id="filtrar">Filtrar</button>
+            </br>
+        </div>
+    </form>
+</div>
+
 </div>
     <div class="container">
         <div class="gallery">

@@ -19,6 +19,7 @@
             <img src="{{ asset('storage/' . $filme->imagem) }}">
             <h2>{{ $filme->name }}</h2>
             <p><strong>{{ $filme->ano }}</strong></p>
+            <p><strong>{{ $filme->categoria }}</strong></p>
             <p class="sinopse">{{ $filme->sinopse }}</p>
             <a href="{{$filme->link}}" target="_blank">Assistir ao Trailer</a>
         </div>

@@ -145,17 +145,32 @@ body {
 }
 
 .filter input[type="number"] {
-    width: 80px; /* Largura ajustada */
-    padding: 10px; /* Espaçamento interno */
+    width: 80px; 
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px; /* Borda arredondada */
-    font-size: 14px; /* Tamanho da fonte */
-    color: #555; /* Cor do texto */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Adiciona estilo quando o input estiver em foco */
 .filter input[type="number"]:focus {
     border-color: #00bfff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.filter input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter input[type="text"]:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+

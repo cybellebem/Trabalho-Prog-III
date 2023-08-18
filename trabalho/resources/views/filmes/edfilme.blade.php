@@ -33,7 +33,10 @@
             <div class="form-group">
                 <label for="imagem_capa">Imagem da Capa:</label>
                 <input type="file" name="imagem" value="{{$filme->imagem }}" accept="image/*" required>
-
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria:</label>
+                <input type="text" name="categoria" value="{{$filme->categoria }}"required>
             </div>
             <div class="form-group">
                 <label for="link_trailer">Link do Trailer:</label>
